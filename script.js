@@ -61,6 +61,7 @@ const updateP1Score = (number) => {
     p1CurrentScore = 0;
     playerOneCurrentEl.innerText = p1CurrentScore;
     console.log("player One current, score: " + p1CurrentScore);
+    userWins(p1TotalScore, getActivePlayerEl[0]);
   });
 };
 
@@ -84,13 +85,13 @@ const updateP2Score = (number) => {
 
     p2CurrentScore = 0;
     playerTwoCurrentEl.innerText = p2CurrentScore;
+    userWins(p2TotalScore, getActivePlayerEl[1]);
   });
 };
 
 // Default loading for hold btn toggle
-
 getBtnClassEl[2].addEventListener("click", function () {
-  if (p1CurrentScore == 0 && p2CurrentScore == 0) {
+  if (p1TotalScore == 0 && p2TotalScore == 0) {
     switchPlayer();
   }
 });
@@ -108,4 +109,11 @@ const diceRollsOne = (pcEl, pEl) => {
   pcEl.innerText = 0;
   pEl.innerText = 0;
   switchPlayer();
+};
+
+// User wins
+const userWins = (totalScore, winner) => {
+  if (totalScore >= 100) {
+    winner.classList.add("player--winner");
+  }
 };
