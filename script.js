@@ -105,7 +105,6 @@ const switchPlayer = () => {
 
 // Reset scores when dice rolls one
 const diceRollsOne = (pcEl, pEl) => {
-  //currentScore = 0;
   pcEl.innerText = 0;
   pEl.innerText = 0;
   switchPlayer();
@@ -117,3 +116,15 @@ const userWins = (totalScore, winner) => {
     winner.classList.add("player--winner");
   }
 };
+
+// Reset game
+getBtnClassEl[0].addEventListener('click', function() {
+  getActivePlayerEl[0].classList.add("player--active");
+  getActivePlayerEl[1].classList.remove("player--active");
+  p1TotalScore = 0;
+  p2TotalScore = 0;
+  playerOneEl.innerText = p1CurrentScore;
+  playerTwoEl.innerText = p2CurrentScore;
+  getDiceEl.src = "dice-5.png";
+  
+})
