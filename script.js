@@ -123,8 +123,11 @@ getBtnClassEl[0].addEventListener('click', function() {
   getActivePlayerEl[1].classList.remove("player--active");
   p1TotalScore = 0;
   p2TotalScore = 0;
-  playerOneEl.innerText = p1CurrentScore;
-  playerTwoEl.innerText = p2CurrentScore;
+  p1CurrentScore = 0;
+  p2CurrentScore = 0;
+  playerOneEl.innerText = 0;
+  playerTwoEl.innerText = 0;
+  playerOneCurrentEl.innerText = 0;
+  playerTwoCurrentEl.innerText = 0;
   getDiceEl.src = "dice-5.png";
-  
 })
